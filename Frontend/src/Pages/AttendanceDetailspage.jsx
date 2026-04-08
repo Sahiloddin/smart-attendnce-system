@@ -13,7 +13,7 @@ const AttendanceDetailspage = () => {
     const fetchAttendanceReport = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/user/getspecificreport",
+          "https://smart-attendnce-system-uadq.onrender.com/api/user/getspecificreport",
           {
             classid: id,
             date,

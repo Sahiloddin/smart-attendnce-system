@@ -32,7 +32,7 @@ const CreateDataset = ({ classId, classname }) => {
     try {
       setFetchingStudents(true);
       const response = await axios.post(
-        "http://localhost:5000/api/user/student/getstudents",
+        "https://smart-attendnce-system-uadq.onrender.com/api/user/student/getstudents",
         { classid: classId }
       );
       if (Array.isArray(response.data)) {
@@ -88,7 +88,7 @@ const CreateDataset = ({ classId, classname }) => {
       if (totalImages >= MIN_IMAGES && !isStudentAdded) {
         try {
           await axios.post(
-            "http://localhost:5000/api/user/student/addstudent",
+            "https://smart-attendnce-system-uadq.onrender.com/api/user/student/addstudent",
             {
               name,
               roll_number: rollNumber,
