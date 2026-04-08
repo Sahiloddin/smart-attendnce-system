@@ -1,0 +1,35 @@
+#Node modules
+node_modules/
+Backend/node_modules/
+Frontdend/node_modules/
+
+#Environment files
+.env
+.env.*
+Backend/.env
+Frontdend/.env
+env/
+env_new/
+
+#Logs
+*.log
+logs/
+
+#python face recognition
+__pychache__/
+*.pyc
+venv/
+FaceRecogntion/venv/
+
+#Build fies
+dist/
+build/
+Frontned/dist/
+#os files
+.DS_Store
+Thumbs.db
+#Editor
+.vscode/
+
+#Mongo locan data
+data/

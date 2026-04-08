@@ -1,0 +1,54 @@
+.section-createclassroom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.createclassroom-form {
+  padding: 2rem;
+  background: var(--dark-color);
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 50rem;
+}
+
+.main-heading {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.createclassroom-form div {
+  margin-bottom: 1.5rem;
+}
+
+.createclassroom-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.createclassroom-form input {
+  width: calc(100% - 2rem);
+  padding: 0.8rem;
+  border: 1px solid var(--helper-color);
+  border-radius: 0.5rem;
+  background-color: var(--dark-color);
+  color: white;
+}
+
+.btn-submit {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--btn-color);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: darken(var(--btn-color), 10%);
+}

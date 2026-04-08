@@ -1,0 +1,47 @@
+.your-classrooms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.your-classrooms h2 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.card {
+  width: 380px;
+  height: 400px;
+  margin-bottom: 20px;
+  background-color: var(--dark-color);
+  color: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.card-title {
+  color: var(--btn-color);
+}
+
+.card-content {
+  margin-bottom: 1.5rem;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 70% auto;
+}
+
+.card-actions > button {
+  width: 30%;
+  margin-top: 150px;
+}
+.card-title {
+  color: white; /* Set custom color for card title */
+}

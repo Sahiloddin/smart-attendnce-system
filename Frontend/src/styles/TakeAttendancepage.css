@@ -1,0 +1,28 @@
+.students-list {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--dark-color);
+  height: fit-content;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-left: -50px;
+}
+
+.students-list h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.students-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.students-list li {
+  margin: 5px 0;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}

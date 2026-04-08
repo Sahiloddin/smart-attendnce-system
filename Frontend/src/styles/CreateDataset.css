@@ -1,0 +1,159 @@
+.section-create-dataset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin-top: -190px;
+  margin-left: 100px;
+}
+
+.form-container {
+  background: var(--dark-color);
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.form-container div {
+  margin-bottom: 1.5rem;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--helper-color);
+  border-radius: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--btn-color);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: darken(var(--btn-color), 10%);
+}
+
+.webcam-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.webcam-container video {
+  border-radius: 0.5rem;
+}
+
+.capture-btn {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--btn-color);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.capture-btn:hover {
+  background-color: darken(var(--btn-color), 10%);
+}
+
+.image-count {
+  margin-top: 2rem;
+  color: var(--btn-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+input {
+  background-color: var(--dark-color);
+}
+.create-dataset-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.students-list {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--dark-color);
+  height: fit-content;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.students-list h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.students-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.students-list li {
+  margin: 5px 0;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.webcam-container {
+  margin-top: 10px;
+}
+
+.capture-btn {
+  margin-top: 10px;
+}
+.students-list {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--dark-color);
+  color: white;
+  height: fit-content;
+  width: 400px;
+  margin-left: 130px;
+}
+
+.students-list h2 {
+  margin-top: 0;
+  font-size: 3.2em;
+}
+
+.students-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.students-list li {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
