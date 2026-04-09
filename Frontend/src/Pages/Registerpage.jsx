@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_BASE } from "../config/api";
 import "../styles/Registerpage.css";
 import { message } from "antd";
 
@@ -27,7 +28,7 @@ const Registerpage = () => {
 
     try {
       const response = await axios.post(
-        "/api/auth/register",
+        `${API_BASE}/api/auth/register`,
         user,
         {
           headers: {

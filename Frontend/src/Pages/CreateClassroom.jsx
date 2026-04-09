@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { message } from "antd";
 import { usercontext } from "../context/user-context";
+import { API_BASE } from "../config/api";
 import "../styles/CreateClassroom.css";
 
 const CreateClassroom = () => {
@@ -22,7 +23,7 @@ const CreateClassroom = () => {
 
     try {
       const response = await axios.post(
-        "/api/user/createclassroom",
+        `${API_BASE}/api/user/createclassroom`,
         classroomData
       );
 

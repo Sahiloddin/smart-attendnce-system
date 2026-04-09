@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Card, Button } from "antd";
 import { usercontext } from "../context/user-context";
+import { API_BASE } from "../config/api";
 import "../styles/YourClassroom.css";
 import { Link } from "react-router-dom";
 
@@ -13,7 +14,7 @@ const YourClassroom = () => {
     const fetchClassrooms = async () => {
       try {
         const response = await axios.post(
-          "/api/user/getclassroom",
+          `${API_BASE}/api/user/getclassroom`,
           { email: user.email } // Send email in the request body
         );
         setClassrooms(response.data.classrooms); // Assuming response.data.classrooms is an array of classrooms

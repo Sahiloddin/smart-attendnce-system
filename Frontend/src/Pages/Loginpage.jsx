@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { message } from "antd";
 import { useNavigate } from "react-router-dom";
+import { API_BASE } from "../config/api";
 import "../styles/LoginPage.css";
 import { usercontext } from "../context/user-context";
 
@@ -28,7 +29,7 @@ const LoginPage = () => {
 
     try {
       const response = await axios.post(
-        "/api/auth/login",
+        `${API_BASE}/api/auth/login`,
         user
       );
 

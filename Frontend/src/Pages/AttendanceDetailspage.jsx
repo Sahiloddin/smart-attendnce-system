@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { API_BASE } from "../config/api";
 import "../styles/AttendanceDetailspage.css";
 
 const AttendanceDetailspage = () => {
@@ -13,7 +14,7 @@ const AttendanceDetailspage = () => {
     const fetchAttendanceReport = async () => {
       try {
         const response = await axios.post(
-          "https://smart-attendnce-system-uadq.onrender.com/api/user/getspecificreport",
+          `${API_BASE}/api/user/getspecificreport`,
           {
             classid: id,
             date,

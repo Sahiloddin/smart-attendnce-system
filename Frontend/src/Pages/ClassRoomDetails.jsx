@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import { API_BASE, FACE_API_BASE } from "../config/api";
 import "../styles/ClassRoomDetails.css";
 import "../styles/TrainModel.css";
 import CreateDataset from "../components/CreateDataset";
@@ -19,7 +20,7 @@ const ClassRoomDetails = () => {
     const fetchClassroomDetails = async () => {
       try {
         const response = await axios.post(
-          "/api/user/getclass",
+          `${API_BASE}/api/user/getclass`,
           { id },
           {
             headers: {
@@ -45,7 +46,7 @@ const ClassRoomDetails = () => {
     setTrainMessage("Training model... Please wait.");
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/retrainmodel/", {
+      const response = await axios.post(`${FACE_API_BASE}/api/retrainmodel/`, {
         classroom_name: classroom.classname,
       });
       setTrainStatus("success");

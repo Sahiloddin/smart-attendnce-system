@@ -2,6 +2,7 @@ import React, { useState, useRef, useCallback, useEffect } from "react";
 import ReactWebcam from "react-webcam";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { API_BASE, FACE_API_BASE } from "../config/api";
 import "../styles/TakeAttendancepage.css";
 import "../styles/TrainModel.css";
 
@@ -36,7 +37,7 @@ const TakeAttendancepage = () => {
   const fetchStudents = async () => {
     try {
       const response = await axios.post(
-        "/api/user/student/getstudentenr",
+        `${API_BASE}/api/user/student/getstudentenr`,
         {
           classid: id,
         }
@@ -55,7 +56,7 @@ const TakeAttendancepage = () => {
     const createattendancereport = async () => {
       try {
         const response = await axios.post(
-          "/api/user/createattendancereport",
+          `${API_BASE}/api/user/createattendancereport`,
           { classid: id, session: 1, attendance: allstudents }
         );
         setFetchingStudents(true);
@@ -82,7 +83,7 @@ const TakeAttendancepage = () => {
       try {
         console.log("Fetching report length for id:", id);
         const response = await axios.post(
-          "/api/user/getreportlength",
+          `${API_BASE}/api/user/getreportlength`,
           { classid: id }
         );
         console.log("Reports", response.data.reports);
@@ -104,7 +105,7 @@ const TakeAttendancepage = () => {
       try {
         console.log(id, reportlength, detectedEmail);
         const response = await axios.post(
-          "/api/user/updatereport",
+          `${API_BASE}/api/user/updatereport`,
           { classid: id, session: reportlength, email: detectedEmail }
         );
         console.log(response.data.message);
@@ -120,7 +121,7 @@ const TakeAttendancepage = () => {
     const fetchClassroomName = async () => {
       try {
         const response = await axios.post(
-          "/api/user/getclass",
+          `${API_BASE}/api/user/getclass`,
           { id }
         );
         setClassroomName(response.data.classroom.classname);
@@ -137,7 +138,7 @@ const TakeAttendancepage = () => {
     if (imageSrc) {
       try {
         const response = await axios.post(
-          "http://127.0.0.1:8000/api/detectface/",
+          `${FACE_API_BASE}/api/detectface/`,
           {
             image: imageSrc,
           }
@@ -196,7 +197,7 @@ const TakeAttendancepage = () => {
     setTrainMessage("Training model... Please wait.");
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/retrainmodel/", {
+      const response = await axios.post(`${FACE_API_BASE}/api/retrainmodel/`, {
         classroom_name: classroomName,
       });
       console.log("Model retrained successfully", response.data);
@@ -220,7 +221,7 @@ const TakeAttendancepage = () => {
   const createnewattendancedocument = async () => {
     try {
       const response = await axios.post(
-        "/api/user/createattendancereport",
+        `${API_BASE}/api/user/createattendancereport`,
         { classid: id, session: reportlength, attendance: allstudents }
       );
       setFetchingStudents(true);

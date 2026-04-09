@@ -2,6 +2,7 @@ import React, { useState, useCallback, useRef, useEffect } from "react";
 import ReactWebcam from "react-webcam";
 import axios from "axios";
 import { message } from "antd";
+import { API_BASE, FACE_API_BASE } from "../config/api";
 import "../styles/CreateDataset.css";
 
 const MIN_IMAGES = 5; // Minimum images required per student for good accuracy
@@ -32,7 +33,7 @@ const CreateDataset = ({ classId, classname }) => {
     try {
       setFetchingStudents(true);
       const response = await axios.post(
-        "https://smart-attendnce-system-uadq.onrender.com/api/user/student/getstudents",
+        `${API_BASE}/api/user/student/getstudents`,
         { classid: classId }
       );
       if (Array.isArray(response.data)) {
@@ -71,7 +72,7 @@ const CreateDataset = ({ classId, classname }) => {
     try {
       // Send image to Flask/DeepFace server for dataset creation
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/createdataset/",
+        `${FACE_API_BASE}/api/createdataset/`,
         {
           name,
           roll_number: rollNumber,
@@ -88,7 +89,7 @@ const CreateDataset = ({ classId, classname }) => {
       if (totalImages >= MIN_IMAGES && !isStudentAdded) {
         try {
           await axios.post(
-            "https://smart-attendnce-system-uadq.onrender.com/api/user/student/addstudent",
+            `${API_BASE}/api/user/student/addstudent`,
             {
               name,
               roll_number: rollNumber,
